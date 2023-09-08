@@ -1,0 +1,12 @@
+version: '3'
+
+tasks:
+  build:
+    cmds:
+      - nix-build simple.nix
+  run:
+    deps:
+      - build
+    cmds:
+      - result/simple
+    ignore_error: true
